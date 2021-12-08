@@ -1,0 +1,11 @@
+nltk
+gemsim
+sklearn
+numpy
+similarity
+
+[dev]
+check-manifest
+
+[test]
+coverage
