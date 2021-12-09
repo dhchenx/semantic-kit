@@ -11,6 +11,14 @@ src/semantic_kit.egg-info/top_level.txt
 src/semantickit/__init__.py
 src/semantickit/__pycache__/__init__.cpython-36.pyc
 src/semantickit/app/__init__.py
+src/semantickit/app/lda_similarity.py
+src/semantickit/app/lsi_model.py
+src/semantickit/app/rpm_similarity.py
+src/semantickit/app/tfidf_test.py
+src/semantickit/app/__pycache__/__init__.cpython-36.pyc
+src/semantickit/app/__pycache__/lda_similarity.cpython-36.pyc
+src/semantickit/app/__pycache__/lsi_model.cpython-36.pyc
+src/semantickit/app/__pycache__/rpm_similarity.cpython-36.pyc
 src/semantickit/distance/Levenshtein.py
 src/semantickit/distance/__init__.py
 src/semantickit/distance/dict_words.txt

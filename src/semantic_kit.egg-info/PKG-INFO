@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: semantic-kit
-Version: 0.0.1a1
+Version: 0.0.1a2
 Summary: A toolkit to estimate semantic similarity or relatedness
 Home-page: https://github.com/dhchenx/semantic-kit
 Author: Donghua Chen
@@ -29,7 +29,7 @@ License-File: LICENSE.txt
 
 # Semantic Similarity and Relatedness Toolkit
 
-A toolkit to estimate semantic similarity and related between two words/sentences. 
+A toolkit to estimate semantic similarity and relatedness between two words/sentences. 
 
 ## Installation
 ```pip
@@ -98,6 +98,31 @@ s0='颈结缔组织良性肿瘤'
 s1='耳软骨良性肿瘤'
 result=weighted_levenshtein(s0,s1, word_dict_path=wordict_path,trans_dict_path=transdict_path,data_path=train_data_path,words_path=words_path)
 print(result)
+```
+
+### LDA similarity
+```python
+from semantickit.app.lsi_model import build_lsi_model
+from semantickit.app.lda_similarity import load_model,save_index,load_index,get_similarity_between_sentences,get_helliger_distance
+
+# data file
+data_path="lsi_data/sentences.txt"
+# stopwords file
+stop_words_path="lsi_data/stopwords_english.txt"
+# build lsi model
+build_lsi_model(data_path=data_path,stopwords_path=stop_words_path,save_dict_path="model.dict",save_corpus_path="model.corpus")
+# create lda model and dictionary
+lda,dictionary,corpus=load_model(data_path="model.dict",corpus_path="model.corpus")
+# save index file
+save_index(lda,corpus,save_path="model.index")
+# load the saved index file
+index=load_index("model.index")
+# get the similarity
+similarity=get_similarity_between_sentences(lda,dictionary,"The LDA algorithm","a new unseen document")
+print("similarity: ", similarity)
+# get the distance
+helliger_distance=get_helliger_distance(lda,dictionary,"The LDA algorithm","a new unseen document")
+print("helliger distance: ",helliger_distance)
 ```
 
 ## License
