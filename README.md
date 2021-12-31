@@ -11,6 +11,7 @@ pip install semantic-kit
 1. Lesk algorithm and improved version
 2. Similarity algorithms including WordNet , word2vec similarity, LDA, and googlenews-based methods
 3. Distance algorithms like jaccard, soren, levenshtein, and their improved versions
+4. Use Open Multilingual Wordnet to generate relevant keywords from multiple language
 
 ## Examples
 ### Lesk Algorithm

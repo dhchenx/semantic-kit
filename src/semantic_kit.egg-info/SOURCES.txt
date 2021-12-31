@@ -1,4 +1,4 @@
-LICENSE.txt
+LICENSE
 MANIFEST.in
 README.md
 setup.cfg
@@ -25,6 +25,8 @@ src/semantickit/distance/n_gram/train_ngram.py
 src/semantickit/distance/n_gram/__pycache__/__init__.cpython-36.pyc
 src/semantickit/distance/n_gram/__pycache__/max_ngram.cpython-36.pyc
 src/semantickit/distance/n_gram/__pycache__/train_ngram.cpython-36.pyc
+src/semantickit/lang/wordnet.py
+src/semantickit/lang/__pycache__/wordnet.cpython-36.pyc
 src/semantickit/relatedness/__init__.py
 src/semantickit/relatedness/lesk.py
 src/semantickit/relatedness/lesk_context.py
