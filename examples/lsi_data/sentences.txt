@@ -1,0 +1,6 @@
+After cleaning the corpus and keeping only the top 15,000 words, we reduced the unique words in the corpus by 84%
+The average document length is halved to 345 tokens after cleaning, compared to the raw version we saw in our explore notebook using word2vec
+The LDA algorithm was explained in detail
+The LDA model was able to accurately identify different topics in the fake news corpus. We visually inspected these topics to see that the top words were related
+We were able to infer a topic distribution from a new unseen document
+We quickly retrieved the most similar documents in the trained corpus when comparing to the new unseen document. These most similar documents were in fact closely related to the query document

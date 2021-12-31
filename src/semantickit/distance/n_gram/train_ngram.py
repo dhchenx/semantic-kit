@@ -56,7 +56,7 @@ class TrainNgram():
         f.close()
 
 if __name__ == '__main__':
-    train_data_path = './data/icd10_train.txt'
+    train_data_path = './lsi_data/icd10_train.txt'
     wordict_path = './model/word_dict.model'
     transdict_path = './model/trans_dict.model'
     #trainer = TrainNgram()
