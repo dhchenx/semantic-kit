@@ -15,7 +15,7 @@ class CharacterInsDelInterface:
 def Normalization(x):
     return [(float(i)-min(x))/float(max(x)-min(x)) for i in x]
 
-def Build_TFIDF(data_path='n_gram/lsi_data/icd10_train.txt',dict_path='dict_words.txt'):
+def Build_TFIDF(data_path='n_gram/data/icd10_train.txt',dict_path='dict_words.txt'):
     fo = open(data_path, mode='r', encoding='utf-8')
     corpus = []
 
@@ -195,7 +195,7 @@ def FindInWordList(unique_word_list,unique_word_tfidf_list, word):
 #如果这个词很重要，插入成本成本会是负数，很低 [-1, 1]
 class CharacterIns(CharacterInsDelInterface):
 
-    def __init__(self,data_path='n_gram/lsi_data/icd10_train.txt',dict_path='dict_words.txt'):
+    def __init__(self,data_path='n_gram/data/icd10_train.txt',dict_path='dict_words.txt'):
         self.w,self.f=Build_TFIDF(data_path,dict_path)
 
     def deletion_cost(self, c):
@@ -211,7 +211,7 @@ class CharacterIns(CharacterInsDelInterface):
 #build tf_idf
 #Build_TFIDF()
 
-def weighted_levenshtein(word1,word2,word_dict_path='n_gram/model/word_dict.model',trans_dict_path='n_gram/model/trans_dict.model',data_path="n_gram/lsi_data/icd10_train.txt",words_path="dict_words.txt"):
+def weighted_levenshtein(word1,word2,word_dict_path='n_gram/model/word_dict.model',trans_dict_path='n_gram/model/trans_dict.model',data_path="n_gram/data/icd10_train.txt",words_path="dict_words.txt"):
     cuter = MaxProbCut(word_dict_path,trans_dict_path )
 
     weighted_levenshtein = WeightedLevenshtein(CharacterSubstitution(), character_ins_del=CharacterIns(data_path,words_path))
